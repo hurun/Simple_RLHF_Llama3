@@ -25,7 +25,7 @@ class RotoryEmbedding(torch.nn.Module):
         _, _, seq_len, dim = x.shape
         # [1, 1, 125, 32]
         cos, sin = self._rotary_embedding(dim, seq_len)
-        print(cos.shape)
+        # print(cos.shape)
 
         # [1, 125, 32] -> [1, 1, 125, 32]
         cos = cos.unsqueeze(1)

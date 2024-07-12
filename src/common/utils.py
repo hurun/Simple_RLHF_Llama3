@@ -19,6 +19,7 @@ def get_causal_mask(attention_mask: torch.Tensor, padding_token: int = 0):
     causal_mask = causal_mask.reshape((1, 1, seq_len, seq_len)).repeat((batch_size, 1, 1, 1))
 
     mask = attention_mask.reshape((batch_size, 1, 1, seq_len)) == padding_token
+    # [batch, 1, 125, 125]
     causal_mask = causal_mask.masked_fill(mask, min_value)
     return causal_mask
 
