@@ -5,8 +5,10 @@
 """
 import math
 import torch
-from src.embedding import RotoryEmbedding
-from src.common.utils import repeat_kv, get_causal_mask
+from embedding import RotoryEmbedding
+from common.utils import repeat_kv, get_causal_mask
+
+
 class LlamaAttention(torch.nn.Module):
     def __init__(self):
         super().__init__()
